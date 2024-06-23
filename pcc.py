@@ -1,20 +1,23 @@
 #!/usr/bin/python3
-import re
-import pyfiglet
-from colorama import Fore, Style
+import re # regular expression
+import pyfiglet # figlet for banner
+from colorama import Fore, Style # colores
 
+# defining colores
 red = Fore.RED
 blue = Fore.BLUE
 cyan = Fore.CYAN
 green = Fore.GREEN
 reset = Style.RESET_ALL
 
+# defining format as short
 format = pyfiglet.figlet_format
 
-
+# banner
 def banner():
     print(green+format("PcC")+reset)
 
+# password checker method
 def passwordChecker(password):
     points = 0
     if len(password) < 8:
@@ -46,7 +49,7 @@ def passwordChecker(password):
     elif points <= 4:
         print(green+"\tPassword Okay"+reset)
 
-
+# main method 
 def main():
     banner()
     password = input("Enter your Passowrd : ")
